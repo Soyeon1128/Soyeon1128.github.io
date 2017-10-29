@@ -3,23 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hello World | Moonshot Thinking</title>
+    <title>클라이언트/서버 구조 | Moonshot Thinking</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="3계층형,클라이언트,웹서버,웹어플리케이션서버,WAS,웹컨테이너,DB" />
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
+<meta name="keywords" content="3계층형,클라이언트,웹서버,웹어플리케이션서버,WAS,웹컨테이너,DB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/16/hello-world/index.html">
+<meta property="og:title" content="클라이언트&#x2F;서버 구조">
+<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/index.html">
 <meta property="og:site_name" content="Moonshot Thinking">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-16T14:21:18.000Z">
+<meta property="og:image" content="http://soyeon1128.github.io/css/images/uploads/02_server_architecture.png">
+<meta property="og:updated_time" content="2017-10-29T11:09:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="클라이언트&#x2F;서버 구조">
+<meta name="twitter:description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
+<meta name="twitter:image" content="http://soyeon1128.github.io/css/images/uploads/02_server_architecture.png">
     
 
     
@@ -132,18 +135,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/Computer-Science/">Computer Science</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-hello-world" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-02-Server-Architecture" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Hello World
+        클라이언트/서버 구조
         </h1>
     
 
@@ -153,25 +156,33 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/10/16/hello-world/" class="article-date">
-            <time datetime="2017-10-16T14:21:18.000Z" itemprop="datePublished">2017-10-16</time>
+        <a href="/2017/10/29/02-Server-Architecture/" class="article-date">
+            <time datetime="2017-10-29T06:00:46.000Z" itemprop="datePublished">2017-10-29</time>
         </a>
     </div>
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/3계층형/">3계층형</a>, <a class="tag-link" href="/tags/DB/">DB</a>, <a class="tag-link" href="/tags/WAS/">WAS</a>, <a class="tag-link" href="/tags/웹서버/">웹서버</a>, <a class="tag-link" href="/tags/웹어플리케이션서버/">웹어플리케이션서버</a>, <a class="tag-link" href="/tags/웹컨테이너/">웹컨테이너</a>, <a class="tag-link" href="/tags/클라이언트/">클라이언트</a>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <h1 id="3계층-클라이언트-서버-구조"><a href="#3계층-클라이언트-서버-구조" class="headerlink" title="3계층 클라이언트/서버 구조"></a>3계층 클라이언트/서버 구조</h1><p>일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.</p>
+<p><img src="../../../../css/images/uploads/02_server_architecture.png" alt="웹 데이터의 흐름"></p>
+<h2 id="1-웹-클라이언트"><a href="#1-웹-클라이언트" class="headerlink" title="1. 웹 클라이언트"></a>1. 웹 클라이언트</h2><p>웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에 표시한다. (* 네트워크, 브라우저 동작 원리는 이후 포스팅 참고)</p>
+<h2 id="2-웹-서버"><a href="#2-웹-서버" class="headerlink" title="2. 웹 서버"></a>2. 웹 서버</h2><p>웹 서버는 클라이언트의 요청을 받아 <code>정적 페이지</code>(HTML, CSS, 이미지 등)를 생성한다. 대표적인 예로 Apache, Nginx, IIS가 있다.</p>
+<h2 id="3-웹-어플리케이션-서버-WAS"><a href="#3-웹-어플리케이션-서버-WAS" class="headerlink" title="3. 웹 어플리케이션 서버 (WAS)"></a>3. 웹 어플리케이션 서버 (WAS)</h2><p>웹 서버와 웹 컨테이너의 결합으로 다양한 역할을 수행한다. 웹 컨테이너는 HTML만으로는 할 수 없는 데이터베이스 조회나 다양한 로직 처리와 같은 <code>동적인 데이터 처리</code>를 한다. 대표적으로 Tomcat, Jeus가 있다.</p>
+<p><strong>* 웹 서버와 WAS의 차이는?</strong></p>
+<p>   <code>웹 컨테이너의 기능</code>(동적 컨텐츠 처리)의 유무가 가장 큰 차이이다.</p>
+<p><strong>* 일반적인 데이터 흐름은?</strong></p>
+<p>  브라우저 &lt;-&gt; 웹 서버 &lt;-&gt; 웹 어플리케이션 서버 (WAS) &lt;-&gt; DB</p>
+<p><strong>* 그렇다면 WAS만 쓰면 되지 왜 웹 서버를 따로 쓰는가?</strong></p>
+<p>  웹 서버와 WAS는 역할이 다르다. 단순한 HTML 파일이나 이미지는 웹 서버를 이용하는 것이 WAS를 이용하는 것보다 빠르고 안정적이다. 반면 DB 서버와 연결되어 데이터를 주고 받거나 변경이 있을 경우에는 WAS를 활용해야 한다.</p>
+<h2 id="4-DB-서버"><a href="#4-DB-서버" class="headerlink" title="4. DB 서버"></a>4. DB 서버</h2><p>  어떠한 목적에 맞게 저장되어 있는 데이터 저장 창고</p>
 
         </div>
         <footer class="article-footer">
@@ -179,7 +190,7 @@
 
 
 
-    <a data-url="http://Soyeon1128.github.io/2017/10/16/hello-world/" data-id="cj9ccbgpb0004qlyc4j1d4vou" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/" data-id="cj9cnmjuq0001awyc5ktseti2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -284,16 +295,12 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/10/18/test01/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            test01
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2017/10/27/01-Server-Component/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">서버 구성 요소</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -305,7 +312,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -320,10 +327,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/10/27/01_Server_Component/" class="thumbnail">
+                            <a href="/2017/10/29/02-Server-Architecture/" class="thumbnail">
     
     
-        <span style="background-image:url(../../../../css/images/uploads/server_flow.png)" alt="서버 구성 요소" class="thumbnail-image"></span>
+        <span style="background-image:url(../../../../css/images/uploads/02_server_architecture.png)" alt="클라이언트/서버 구조" class="thumbnail-image"></span>
     
     
 </a>
@@ -332,7 +339,27 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a></p>
-                            <p class="item-title"><a href="/2017/10/27/01_Server_Component/" class="title">서버 구성 요소</a></p>
+                            <p class="item-title"><a href="/2017/10/29/02-Server-Architecture/" class="title">클라이언트/서버 구조</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T06:00:46.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/10/27/01-Server-Component/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../css/images/uploads/01_cpu.png)" alt="서버 구성 요소" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a></p>
+                            <p class="item-title"><a href="/2017/10/27/01-Server-Component/" class="title">서버 구성 요소</a></p>
                             <p class="item-date"><time datetime="2017-10-27T06:15:45.000Z" itemprop="datePublished">2017-10-27</time></p>
                         </div>
                     </li>
@@ -354,26 +381,6 @@
                             <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/JavaScript/">JavaScript</a></p>
                             <p class="item-title"><a href="/2017/10/18/test01/" class="title">test01</a></p>
                             <p class="item-date"><time datetime="2017-10-18T04:18:29.000Z" itemprop="datePublished">2017-10-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/16/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2017/10/16/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2017-10-16T14:21:18.000Z" itemprop="datePublished">2017-10-16</time></p>
                         </div>
                     </li>
                 
@@ -408,7 +415,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://Soyeon1128.github.io/2017/10/16/hello-world/';
+    var disqus_url = 'http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/';
     
     (function() {
     var dsq = document.createElement('script');
