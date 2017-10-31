@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>클라이언트/서버 구조 | Moonshot Thinking</title>
+    <title>브라우저 동작 원리 / 렌더링 엔진 | Moonshot Thinking</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="3계층형,클라이언트,웹서버,웹어플리케이션서버,WAS,웹컨테이너,DB" />
+        <meta name="keywords" content="브라우저,렌더링엔진,파싱,DOM트리,렌더트리,자바스크립트엔진" />
     
-    <meta name="description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
-<meta name="keywords" content="3계층형,클라이언트,웹서버,웹어플리케이션서버,WAS,웹컨테이너,DB">
+    <meta name="description" content="브라우저 동작 원리 (렌더링 엔진 중심으로)  사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다. 렌더링 엔진 : 요청한 콘텐츠를 표시한다. 통신 : HTTP 요청과 같은 네트">
+<meta name="keywords" content="브라우저,렌더링엔진,파싱,DOM트리,렌더트리,자바스크립트엔진">
 <meta property="og:type" content="article">
-<meta property="og:title" content="클라이언트&#x2F;서버 구조">
-<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/index.html">
+<meta property="og:title" content="브라우저 동작 원리 &#x2F; 렌더링 엔진">
+<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/31/04-Browser/index.html">
 <meta property="og:site_name" content="Moonshot Thinking">
-<meta property="og:description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
+<meta property="og:description" content="브라우저 동작 원리 (렌더링 엔진 중심으로)  사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다. 렌더링 엔진 : 요청한 콘텐츠를 표시한다. 통신 : HTTP 요청과 같은 네트">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://soyeon1128.github.io/css/images/uploads/02_server_architecture.png">
-<meta property="og:updated_time" content="2017-10-31T06:32:42.000Z">
+<meta property="og:image" content="http://soyeon1128.github.io/css/images/uploads/04_browser.png">
+<meta property="og:updated_time" content="2017-10-31T14:25:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="클라이언트&#x2F;서버 구조">
-<meta name="twitter:description" content="3계층 클라이언트/서버 구조일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.  1. 웹 클라이언트웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에">
-<meta name="twitter:image" content="http://soyeon1128.github.io/css/images/uploads/02_server_architecture.png">
+<meta name="twitter:title" content="브라우저 동작 원리 &#x2F; 렌더링 엔진">
+<meta name="twitter:description" content="브라우저 동작 원리 (렌더링 엔진 중심으로)  사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다. 렌더링 엔진 : 요청한 콘텐츠를 표시한다. 통신 : HTTP 요청과 같은 네트">
+<meta name="twitter:image" content="http://soyeon1128.github.io/css/images/uploads/04_browser.png">
     
 
     
@@ -135,18 +135,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Computer-Science/">Computer Science</a>
+    <a class="page-title-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-end/Web/">Web</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-02-Server-Architecture" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-04-Browser" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        클라이언트/서버 구조
+        브라우저 동작 원리 / 렌더링 엔진
         </h1>
     
 
@@ -156,33 +156,54 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/10/29/02-Server-Architecture/" class="article-date">
-            <time datetime="2017-10-29T06:00:46.000Z" itemprop="datePublished">2017-10-29</time>
+        <a href="/2017/10/31/04-Browser/" class="article-date">
+            <time datetime="2017-10-31T04:36:36.000Z" itemprop="datePublished">2017-10-31</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/3계층형/">3계층형</a>, <a class="tag-link" href="/tags/DB/">DB</a>, <a class="tag-link" href="/tags/WAS/">WAS</a>, <a class="tag-link" href="/tags/웹서버/">웹서버</a>, <a class="tag-link" href="/tags/웹어플리케이션서버/">웹어플리케이션서버</a>, <a class="tag-link" href="/tags/웹컨테이너/">웹컨테이너</a>, <a class="tag-link" href="/tags/클라이언트/">클라이언트</a>
+        <a class="tag-link" href="/tags/DOM트리/">DOM트리</a>, <a class="tag-link" href="/tags/렌더링엔진/">렌더링엔진</a>, <a class="tag-link" href="/tags/렌더트리/">렌더트리</a>, <a class="tag-link" href="/tags/브라우저/">브라우저</a>, <a class="tag-link" href="/tags/자바스크립트엔진/">자바스크립트엔진</a>, <a class="tag-link" href="/tags/파싱/">파싱</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="3계층-클라이언트-서버-구조"><a href="#3계층-클라이언트-서버-구조" class="headerlink" title="3계층 클라이언트/서버 구조"></a>3계층 클라이언트/서버 구조</h1><p>일반적인 클라이언트/서버 시스템 설계에서는 3계층형 구조를 사용한다.</p>
-<p><img src="../../../../css/images/uploads/02_server_architecture.png" alt="웹 데이터의 흐름"></p>
-<h2 id="1-웹-클라이언트"><a href="#1-웹-클라이언트" class="headerlink" title="1. 웹 클라이언트"></a>1. 웹 클라이언트</h2><p>웹 클라이언트(웹 브라우저)는 서버로 요청을 보내고, 서버가 보내온 응답을 화면에 출력하는 역할을 한다. 웹 상에서 클라이언트와 서버는 HTTP 프로토콜 이라는 약속된 규약으로 요청/응답한다. 브라우저는 주로 HTML 코드를 파싱하여 화면에 표시한다. (* 네트워크, 브라우저 동작 원리는 이후 포스팅 참고)</p>
-<h2 id="2-웹-서버"><a href="#2-웹-서버" class="headerlink" title="2. 웹 서버"></a>2. 웹 서버</h2><p>웹 서버는 클라이언트의 요청을 받아 <code>정적 페이지</code>(HTML, CSS, 이미지 등)를 생성한다. 대표적인 예로 Apache, Nginx, IIS가 있다.</p>
-<h2 id="3-웹-어플리케이션-서버-WAS"><a href="#3-웹-어플리케이션-서버-WAS" class="headerlink" title="3. 웹 어플리케이션 서버 (WAS)"></a>3. 웹 어플리케이션 서버 (WAS)</h2><p>웹 서버와 웹 컨테이너의 결합으로 다양한 역할을 수행한다. 웹 컨테이너는 HTML만으로는 할 수 없는 데이터베이스 조회나 다양한 로직 처리와 같은 <code>동적인 데이터 처리</code>를 한다. 대표적으로 Tomcat, Jeus가 있다.</p>
-<p><strong>* 웹 서버와 WAS의 차이는?</strong></p>
-<p>   <code>웹 컨테이너의 기능</code>(동적 컨텐츠 처리)의 유무가 가장 큰 차이이다.</p>
-<p><strong>* 일반적인 데이터 흐름은?</strong></p>
-<p>  브라우저 &lt;-&gt; 웹 서버 &lt;-&gt; 웹 어플리케이션 서버 (WAS) &lt;-&gt; DB</p>
-<p><strong>* 그렇다면 WAS만 쓰면 되지 왜 웹 서버를 따로 쓰는가?</strong></p>
-<p>  웹 서버와 WAS는 역할이 다르다. 단순한 HTML 파일이나 이미지는 웹 서버를 이용하는 것이 WAS를 이용하는 것보다 빠르고 안정적이다. 반면 DB 서버와 연결되어 데이터를 주고 받거나 변경이 있을 경우에는 WAS를 활용해야 한다. 물론 WAS만 두고 바로 요청받는 방식도 사용된다.</p>
-<h2 id="4-DB-서버"><a href="#4-DB-서버" class="headerlink" title="4. DB 서버"></a>4. DB 서버</h2><p>  어떠한 목적에 맞게 저장되어 있는 데이터 저장 창고</p>
+            <h1 id="브라우저-동작-원리-렌더링-엔진-중심으로"><a href="#브라우저-동작-원리-렌더링-엔진-중심으로" class="headerlink" title="브라우저 동작 원리 (렌더링 엔진 중심으로)"></a>브라우저 동작 원리 (렌더링 엔진 중심으로)</h1><p><img src="../../../../css/images/uploads/04_browser.png" alt="브라우저의 기본 구성"></p>
+<ul>
+<li><strong>사용자 인터페이스</strong> : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다.</li>
+<li><strong>브라우저 엔진</strong> : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다.</li>
+<li><strong>렌더링 엔진</strong> : 요청한 콘텐츠를 표시한다.</li>
+<li><strong>통신</strong> : HTTP 요청과 같은 네트워크 호출에 사용된다. 플랫폼 독립적인 인터페이스이며 각 플랫폼 하부에서 실행된다.</li>
+<li><strong>UI 백엔드</strong> : 콤보 박스와 창 같은 기본적인 장치를 그린다. 플랫폼에서 명시하지 않은 일반적인 인터페이스로서, OS 사용자 인터페이스 체계를 사용한다.</li>
+<li><strong>자바스크립트 해석기</strong> : 자바스크립트 코드를 해석하고 실행한다.</li>
+<li><strong>자료 저장소</strong> : 자료를 저장하는 계층이다. 쿠키를 저장하는 것과 같이 모든 종류의 자원을 하드 디스크에 저장할 필요가 있다. HTML5 명세에는 브라우저가 지원하는 ‘웹 데이터 베이스’가 정의되어 있다.</li>
+</ul>
+<hr>
+<h2 id="렌더링-엔진"><a href="#렌더링-엔진" class="headerlink" title="렌더링 엔진"></a>렌더링 엔진</h2><p>대표적으로 <code>Webkit</code>(Safari, Chrome 28 버전 이전), <code>Gecko</code>(Firefox), <code>Blink</code>(Chrome 28 버전 부터) 등이 있다. 레이아웃 엔진이라고도 한다. 각 렌더링 엔진마다 명칭이나 구성이 조금씩 차이가 나지만 기본적인 동작 과정은 다음과 같다.</p>
+<p><img src="../../../../css/images/uploads/04_webkit.png" alt="Webkit 동작 과정"><br><img src="../../../../css/images/uploads/04_gecko.png" alt="Gecko 동작 과정 "></p>
+<h3 id="1-HTML-파싱-DOM-트리-구축"><a href="#1-HTML-파싱-DOM-트리-구축" class="headerlink" title="1. HTML 파싱 (DOM 트리 구축)"></a>1. HTML 파싱 (DOM 트리 구축)</h3><p>파싱이란 브라우저가 코드를 이해하고 사용할 수 있는 구조로 변환하는 것을 의미한다. HTML 문서를 파싱하여 DOM 트리로 변환하고, 외부 CSS 파일과 함께 포함된 스타일 요소를 파싱한다.</p>
+<ul>
+<li><strong><em>DOM</em></strong> : DOM(Document Object Model)은 HTML과 XML 문서를 위한 API다. <code>문서의 구조화된 표현</code>을 제공하고 그 구조에 접근하여 내용과 시각적 표현을 변경할 수 있게 한다. 본질적으로 DOM은 스크립트 또는 프로그래밍 언어로 웹페이지를 연결한다. (* DOM에 대한 자세한 내용은 따로 포스팅 예정)</li>
+</ul>
+<h3 id="2-렌더-트리-구축"><a href="#2-렌더-트리-구축" class="headerlink" title="2. 렌더 트리 구축"></a>2. 렌더 트리 구축</h3><p>문서의 시각적인 요소가 포함된 형태를 갖게 된다.</p>
+<p><strong>* DOM 트리? 렌더 트리?</strong></p>
+<p>파싱으로 생성된 DOM 트리는 HTML/XML 문서의 내용을 트리 형태로 자료구조화 한 것이다. 실제 이 내용을 화면에 표시하기 위해서는 다른 형태의 구조(렌더 트리)가 필요하다.<br>즉, <em>DOM 트리</em> 는 <code>내용 자체를 저장</code>하고 있고,<br><em>렌더 트리</em> 는 <code>화면에 표시하기 위한 위치와 크기 정보, 그리는 순서 등을 저장하기 위한</code> 별도의 트리 구조다. </p>
+<h3 id="3-렌더-트리-배치"><a href="#3-렌더-트리-배치" class="headerlink" title="3. 렌더 트리 배치"></a>3. 렌더 트리 배치</h3><p>각 노드를 화면의 정확한 위치에 표시한다.</p>
+<h3 id="4-렌더-트리-그리기"><a href="#4-렌더-트리-그리기" class="headerlink" title="4. 렌더 트리 그리기"></a>4. 렌더 트리 그리기</h3><p>화면에 내용을 표시하기 위해 렌더 트리가 탐색되고 렌더러의 페인트(paint) 메서드가 호출된다.<br>UI 백엔드에서 렌더 트리의 각 노드를 가로지르며 형상을 만들어 낸다.</p>
+<p><strong>* 동적 변경 ?</strong><br>브라우저는 변경에 대해 가능한 한 최소한의 동작으로 반응하려고 노력한다. 그렇기 때문에 요소의 색깔이 바뀌면 <code>해당 요소의 리페인팅만 발생</code>한다. 요소의 위치가 바뀌면 요소와 자식 그리고 형제의 리페인팅과 재배치가 발생한다. DOM 노드를 추가하면 노드의 리페인팅과 재 배치가 발생한다. ‘html’ 요소의 글꼴 크기를 변경하는 것과 같은 큰 변경은 캐시를 무효화하고 트리 전체의 배치와 리페인팅이 발생한다.</p>
+<p><strong>* 렌더링 엔진의 스레드 ?</strong><br>렌더링 엔진은 통신을 제외한 거의 모든 경우에 단일 스레드로 동작한다. 파이어폭스와 사파리의 경우 렌더링 엔진의 스레드는 브라우저의 주요한 스레드에 해당한다. 크롬에서는 이것이 탭 프로세스의 주요 스레드이다.</p>
+<p><em>크롬</em> 은 대부분의 브라우저와 달리 각 탭마다 별도의 렌더링 엔진 인스턴스를 유지한다. 각 탭은 독립된 프로세스로 처리된다. 이 말인즉슨, 크롬 브라우저는 탭을 많이 열어둘수록 시스템 메모리 사용량도 많아지고 브라우저의 속도도 느려진다는 뜻이다.</p>
+<p>(학원 다닐 때 강사님께서 크롬 사용자들 쓸데없는 탭 많이 열어 두지 말라고 하신 이유..의 원리가 이제야 이해가 되었다!!)</p>
+<hr>
+<p>렌더링 엔진을 공부하다 보니 <code>구글의 V8</code> 엔진이 떠올랐다. V8 엔진은 자바스크립트 엔진의 한 종류이다. 렌더링 엔진과는 다른 개념이다.</p>
+<h2 id="자바스크립트-엔진"><a href="#자바스크립트-엔진" class="headerlink" title="자바스크립트 엔진"></a>자바스크립트 엔진</h2><p>자바스크립트 코드를 실행하는 인터프리터 또는 프로그램 이다. 전형적인 인터프리터의 역할 및 JIT 컴파일 활용 및 많은 기능을 한다.</p>
+<p>주로 웹 브라우저에 이용되지만 최근에는 자바스크립트 엔진을 장착한 서버 사이드 프레임워크가 등장할 정도로 점차 그 영역을 넓히고 있다. (cf. Node.js는 V8을 기반으로 하는 서버 사이드 프레임워크다.)</p>
+<p>대표적으로 Rhino(Mozilla), SpiderMonkey(Firefox), V8(Google) 등이 있다.</p>
+<hr>
+<p><strong>[참고 링크]</strong><br><a href="http://d2.naver.com/helloworld/59361" target="_blank" rel="external">네이버 D2 &lt;브라우저는 어떻게 동작하는가?&gt;</a><br><a href="https://www.slideshare.net/JinKyoungHeo/1-2-53043752" target="_blank" rel="external">SlideShare 브라우저 동작 원리</a><br><a href="http://huns.me/development/360" target="_blank" rel="external">Interpreter and JavaScript Engine</a></p>
 
         </div>
         <footer class="article-footer">
@@ -190,7 +211,7 @@
 
 
 
-    <a data-url="http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/" data-id="cj9fpi9aa0000fbycpaefr9bp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://Soyeon1128.github.io/2017/10/31/04-Browser/" data-id="cj9fpi9am0005fbycrk03idxp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -295,20 +316,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2017/10/31/03-Network/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            네트워크, TCP/IP
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/10/27/01-Server-Component/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/10/31/03-Network/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">서버 구성 요소</p>
+        <p class="article-nav-title">네트워크, TCP/IP</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -465,7 +476,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://Soyeon1128.github.io/2017/10/29/02-Server-Architecture/';
+    var disqus_url = 'http://Soyeon1128.github.io/2017/10/31/04-Browser/';
     
     (function() {
     var dsq = document.createElement('script');
