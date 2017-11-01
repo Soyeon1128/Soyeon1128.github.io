@@ -13,16 +13,16 @@
 <meta name="keywords" content="브라우저,렌더링엔진,파싱,DOM트리,렌더트리,자바스크립트엔진">
 <meta property="og:type" content="article">
 <meta property="og:title" content="브라우저 동작 원리 &#x2F; 렌더링 엔진">
-<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/31/04-Browser/index.html">
+<meta property="og:url" content="http://Soyeon1128.github.io/2017/10/31/03-Browser/index.html">
 <meta property="og:site_name" content="Moonshot Thinking">
 <meta property="og:description" content="브라우저 동작 원리 (렌더링 엔진 중심으로)  사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다. 렌더링 엔진 : 요청한 콘텐츠를 표시한다. 통신 : HTTP 요청과 같은 네트">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://soyeon1128.github.io/css/images/uploads/04_browser.png">
-<meta property="og:updated_time" content="2017-10-31T14:25:29.000Z">
+<meta property="og:image" content="http://soyeon1128.github.io/css/images/uploads/03_browser.png">
+<meta property="og:updated_time" content="2017-11-01T02:01:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="브라우저 동작 원리 &#x2F; 렌더링 엔진">
 <meta name="twitter:description" content="브라우저 동작 원리 (렌더링 엔진 중심으로)  사용자 인터페이스 : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다. 브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다. 렌더링 엔진 : 요청한 콘텐츠를 표시한다. 통신 : HTTP 요청과 같은 네트">
-<meta name="twitter:image" content="http://soyeon1128.github.io/css/images/uploads/04_browser.png">
+<meta name="twitter:image" content="http://soyeon1128.github.io/css/images/uploads/03_browser.png">
     
 
     
@@ -76,7 +76,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/">Computer Science</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/JavaScript/">JavaScript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Web/">Web</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/">Computer Science</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Web/">Web</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/">About</a>
@@ -139,7 +139,7 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-04-Browser" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-03-Browser" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -156,7 +156,7 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2017/10/31/04-Browser/" class="article-date">
+        <a href="/2017/10/31/03-Browser/" class="article-date">
             <time datetime="2017-10-31T04:36:36.000Z" itemprop="datePublished">2017-10-31</time>
         </a>
     </div>
@@ -171,7 +171,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="브라우저-동작-원리-렌더링-엔진-중심으로"><a href="#브라우저-동작-원리-렌더링-엔진-중심으로" class="headerlink" title="브라우저 동작 원리 (렌더링 엔진 중심으로)"></a>브라우저 동작 원리 (렌더링 엔진 중심으로)</h1><p><img src="../../../../css/images/uploads/04_browser.png" alt="브라우저의 기본 구성"></p>
+            <h1 id="브라우저-동작-원리-렌더링-엔진-중심으로"><a href="#브라우저-동작-원리-렌더링-엔진-중심으로" class="headerlink" title="브라우저 동작 원리 (렌더링 엔진 중심으로)"></a>브라우저 동작 원리 (렌더링 엔진 중심으로)</h1><p><img src="../../../../css/images/uploads/03_browser.png" alt="브라우저의 기본 구성"></p>
 <ul>
 <li><strong>사용자 인터페이스</strong> : 주소 표시줄, 이전/다음 버튼, 북마크 메뉴, 새로고침 버튼, 홈 버튼 등. 요청한 페이지를 보여주는 창을 제외한 나머지 모든 부분이다.</li>
 <li><strong>브라우저 엔진</strong> : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어한다.</li>
@@ -183,7 +183,7 @@
 </ul>
 <hr>
 <h2 id="렌더링-엔진"><a href="#렌더링-엔진" class="headerlink" title="렌더링 엔진"></a>렌더링 엔진</h2><p>대표적으로 <code>Webkit</code>(Safari, Chrome 28 버전 이전), <code>Gecko</code>(Firefox), <code>Blink</code>(Chrome 28 버전 부터) 등이 있다. 레이아웃 엔진이라고도 한다. 각 렌더링 엔진마다 명칭이나 구성이 조금씩 차이가 나지만 기본적인 동작 과정은 다음과 같다.</p>
-<p><img src="../../../../css/images/uploads/04_webkit.png" alt="Webkit 동작 과정"><br><img src="../../../../css/images/uploads/04_gecko.png" alt="Gecko 동작 과정 "></p>
+<p><img src="../../../../css/images/uploads/03_webkit.png" alt="Webkit 동작 과정"><br><img src="../../../../css/images/uploads/03_gecko.png" alt="Gecko 동작 과정 "></p>
 <h3 id="1-HTML-파싱-DOM-트리-구축"><a href="#1-HTML-파싱-DOM-트리-구축" class="headerlink" title="1. HTML 파싱 (DOM 트리 구축)"></a>1. HTML 파싱 (DOM 트리 구축)</h3><p>파싱이란 브라우저가 코드를 이해하고 사용할 수 있는 구조로 변환하는 것을 의미한다. HTML 문서를 파싱하여 DOM 트리로 변환하고, 외부 CSS 파일과 함께 포함된 스타일 요소를 파싱한다.</p>
 <ul>
 <li><strong><em>DOM</em></strong> : DOM(Document Object Model)은 HTML과 XML 문서를 위한 API다. <code>문서의 구조화된 표현</code>을 제공하고 그 구조에 접근하여 내용과 시각적 표현을 변경할 수 있게 한다. 본질적으로 DOM은 스크립트 또는 프로그래밍 언어로 웹페이지를 연결한다. (* DOM에 대한 자세한 내용은 따로 포스팅 예정)</li>
@@ -211,7 +211,7 @@
 
 
 
-    <a data-url="http://Soyeon1128.github.io/2017/10/31/04-Browser/" data-id="cj9fpi9am0005fbycrk03idxp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://Soyeon1128.github.io/2017/10/31/03-Browser/" data-id="cj9geyfqi0002e7ycx5mxd8fc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -317,9 +317,9 @@
 <nav id="article-nav">
     
     
-        <a href="/2017/10/31/03-Network/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/10/29/02-Server-Architecture/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">네트워크, TCP/IP</p>
+        <p class="article-nav-title">클라이언트/서버 구조</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -333,7 +333,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Web/">Web</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -348,10 +348,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/10/31/04-Browser/" class="thumbnail">
+                            <a href="/2017/10/31/03-Browser/" class="thumbnail">
     
     
-        <span style="background-image:url(../../../../css/images/uploads/04_browser.png)" alt="브라우저 동작 원리 / 렌더링 엔진" class="thumbnail-image"></span>
+        <span style="background-image:url(../../../../css/images/uploads/03_browser.png)" alt="브라우저 동작 원리 / 렌더링 엔진" class="thumbnail-image"></span>
     
     
 </a>
@@ -360,28 +360,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/Web/">Web</a></p>
-                            <p class="item-title"><a href="/2017/10/31/04-Browser/" class="title">브라우저 동작 원리 / 렌더링 엔진</a></p>
+                            <p class="item-title"><a href="/2017/10/31/03-Browser/" class="title">브라우저 동작 원리 / 렌더링 엔진</a></p>
                             <p class="item-date"><time datetime="2017-10-31T04:36:36.000Z" itemprop="datePublished">2017-10-31</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/31/03-Network/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a></p>
-                            <p class="item-title"><a href="/2017/10/31/03-Network/" class="title">네트워크, TCP/IP</a></p>
-                            <p class="item-date"><time datetime="2017-10-31T04:36:16.000Z" itemprop="datePublished">2017-10-31</time></p>
                         </div>
                     </li>
                 
@@ -428,7 +408,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/10/18/test01/" class="thumbnail">
+                            <a href="/2017/10/25/00-Intro/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -439,9 +419,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/JavaScript/">JavaScript</a></p>
-                            <p class="item-title"><a href="/2017/10/18/test01/" class="title">test01</a></p>
-                            <p class="item-date"><time datetime="2017-10-18T04:18:29.000Z" itemprop="datePublished">2017-10-18</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/10/25/00-Intro/" class="title">블로그를 시작하며!</a></p>
+                            <p class="item-date"><time datetime="2017-10-25T06:40:19.000Z" itemprop="datePublished">2017-10-25</time></p>
                         </div>
                     </li>
                 
@@ -476,7 +456,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://Soyeon1128.github.io/2017/10/31/04-Browser/';
+    var disqus_url = 'http://Soyeon1128.github.io/2017/10/31/03-Browser/';
     
     (function() {
     var dsq = document.createElement('script');
